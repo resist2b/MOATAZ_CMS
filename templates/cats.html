@@ -1,0 +1,35 @@
+{include="header"}
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{$title}</h2>
+                <a href="addArticle.php" class="btn btn-primary square-btn-adjust">Add Cat</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                {if="$cats==0"}
+                <p>Sorry,No Cats</p>
+
+                {else}
+
+                {loop="$cats"}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1><a href="/cats/show/{$value.cid}/" >{$value.cname}</a></h1>
+
+                    </div>
+                </div>
+                {/loop}
+                {/if}
+
+
+
+            </div>
+        </div>
+
+    </div>
+    {include="footer"}

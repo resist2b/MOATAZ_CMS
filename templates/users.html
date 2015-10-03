@@ -1,0 +1,62 @@
+{include="header"}
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{$title}</h2>
+                <a href="#" class="btn btn-primary square-btn-adjust">Add User</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            {if="$users==0"}
+                            <p>Sorry,No Users</p>
+
+                            {else}
+
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>user_username</th>
+                                        <th>user_fname</th>
+                                        <th>user_lname</th>
+                                        <th>user_email</th>
+                                        <th>user_password</th>
+                                        <th>user_bio</th>
+                                        <th>user_isAdmin</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {loop="$users"}
+                                    <tr class="odd gradeX">
+                                        <td> {$value.user_username}</td>
+                                        <td> {$value.user_fname}</td>
+                                        <td> {$value.user_lname}</td>
+                                        <td> {$value.user_email}</td>
+                                        <td> {$value.user_password}</td>
+                                        <td> {$value.user_bio}</td>
+                                        <td>    {if="$value.user_isAdmin==1"} Admin  {else} User {/if}</td>
+                                    </tr>
+                                    {/loop}
+                                </tbody>
+                            </table>
+                            {/if}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{include="footer"}

@@ -1,0 +1,45 @@
+{include="header"}
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{$title}</h2>
+                <a href="addArticle.php" class="btn btn-primary square-btn-adjust">Add Article</a>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                {if="$articles==0"}
+                <p>Sorry,No Articles</p>
+
+                {else}
+
+                {loop="$articles"}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1><a href="/articles/show/{$value.id}/" >{$value.title}</a></h1>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+
+                            <p>{$value.content}</p>
+                            <div>
+                                <span class="badge">Posted {$value.date}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {/loop}
+                {/if}
+
+
+
+            </div>
+        </div>
+
+    </div>
+    {include="footer"}

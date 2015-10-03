@@ -1,0 +1,21 @@
+RewriteEngine on
+Options -MultiViews
+#Options -Indexes
+
+#directory
+RewriteCond %{REQUEST_FILENAME} !-d
+#file
+RewriteCond %{REQUEST_FILENAME} !-f
+#link
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#mod rewrite - Redirect all traffic to index.php using mod_rewrite - Stack Overflow
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+#RewriteCond $1 !^(index\.php|resources|images|css|js|robots\.txt|favicon\.ico)
+
+#Options +FollowSymLinks
+#Access forbidden!
+#DirectoryIndex index.php
+#RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+
+         #Target all files in "xml/" directory that end in ".php"

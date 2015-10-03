@@ -1,0 +1,81 @@
+{include="header"}
+<div id="page-wrapper" >
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Advanced Tables -->
+                {if="$article==0"}
+                <p>Sorry,No Article Found</p>
+
+                {else}
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>{$article.title}</h1>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+
+                            <p>{$article.content}</p>
+                            <div>
+                                <span class="badge">Posted {$article.date}</span>
+                                <div class="pull-right"><a href="/cats/show/{$value.cid}/" target="_blank" ><span class="label label-warning">{$article.cname}</span></a> </div>         
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>Comments</h1>
+
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Moataz Mohammady</h4>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+
+                                    <p>goog Article </p>
+                                    <div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4>Mohammed Mohammady</h4>
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+
+                                    <p>Keep Going</p>
+                                    <div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {/if}
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    {include="footer"}
