@@ -7,8 +7,7 @@ ini_set('display_startup_errors', TRUE);
 require './app/globals.php';
 
 $RainTPL = new RainTPL();
-$RainTPL::configure("base_url", 'http://localhost/AhmedSyamRouting/');
-
+$RainTPL::configure("base_url", BASE_URL);
 
 
 if (!isset($_GET['url'])) {
